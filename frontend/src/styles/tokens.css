@@ -1,0 +1,61 @@
+:root {
+  /* Core Indian Design Language on Pure Black (#000 to #050505) */
+  --bg: #000000;
+  --bg-deep: #050505;
+  --surface: #0A0A0A;
+  --surface-2: #111111;
+  --surface-3: #161618;
+  --border: #1C1C1F;
+  --border-strong: #2A2A2E;
+
+  /* Typography Colors */
+  --text: #F5EFE6; /* Warm White */
+  --text-muted: #A59E92; /* Muted Warm Gray */
+  --text-dim: #656057;
+
+  /* Authentic Indian Accent Palette */
+  --saffron: #FF9933; /* Primary Accent */
+  --saffron-muted: rgba(255, 153, 51, 0.15);
+  --saffron-glow: 0 0 12px rgba(255, 153, 51, 0.45);
+
+  --green: #138808; /* India Green / Success */
+  --green-muted: rgba(19, 136, 8, 0.15);
+  --green-glow: 0 0 12px rgba(19, 136, 8, 0.45);
+
+  --gold: #D4A017; /* Antique Gold / Coins / Highlights */
+  --gold-muted: rgba(212, 160, 23, 0.15);
+  --gold-glow: 0 0 12px rgba(212, 160, 23, 0.45);
+
+  --kumkum: #B3202A; /* Kumkum Red / Danger / Anomaly */
+  --kumkum-muted: rgba(179, 32, 42, 0.15);
+  --kumkum-glow: 0 0 12px rgba(179, 32, 42, 0.45);
+
+  /* Compatibility Accents */
+  --cyan: #2DD4D4;
+  --cyan-muted: rgba(45, 212, 212, 0.15);
+  --cyan-glow: 0 0 8px rgba(45, 212, 212, 0.4);
+
+  --periwinkle: #8B8DFF;
+  --periwinkle-muted: rgba(139, 141, 255, 0.15);
+  --periwinkle-glow: 0 0 8px rgba(139, 141, 255, 0.4);
+
+  --ok: #138808;
+  --ok-muted: rgba(19, 136, 8, 0.15);
+  --ok-glow: 0 0 10px rgba(19, 136, 8, 0.4);
+
+  --warn: #D4A017;
+  --warn-muted: rgba(212, 160, 23, 0.15);
+  --warn-glow: 0 0 10px rgba(212, 160, 23, 0.4);
+
+  --danger: #B3202A;
+  --danger-muted: rgba(179, 32, 42, 0.15);
+  --danger-glow: 0 0 10px rgba(179, 32, 42, 0.4);
+
+  --lime: #C6FF3D;
+  --mint: #CFE9E4;
+
+  /* Radii */
+  --radius-sm: 4px;
+  --radius: 6px;
+  --radius-md: 8px;
+}

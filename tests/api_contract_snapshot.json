@@ -1,0 +1,121 @@
+{
+  "GET /health": {
+    "required_fields": [
+      "status",
+      "app",
+      "version",
+      "ocr_engine",
+      "classifier_model",
+      "anomaly_detector",
+      "database"
+    ]
+  },
+  "POST /upload-receipt": {
+    "required_fields": [
+      "status",
+      "message",
+      "expense_id",
+      "expense",
+      "parsed_receipt",
+      "predicted_category",
+      "category_confidence",
+      "classifier_confidence",
+      "ocr_confidence",
+      "needs_review",
+      "review_reason",
+      "audit_risk",
+      "image_url"
+    ]
+  },
+  "GET /expenses": {
+    "is_array": true,
+    "required_fields": [
+      "id",
+      "date",
+      "vendor",
+      "amount",
+      "category",
+      "is_anomaly",
+      "risk_severity"
+    ]
+  },
+  "GET /dashboard/summary": {
+    "required_fields": [
+      "total_spend",
+      "total_receipts",
+      "anomalous_receipts",
+      "anomaly_rate_pct",
+      "average_transaction",
+      "average_ocr_confidence",
+      "monthly_trend",
+      "category_breakdown",
+      "top_vendors"
+    ]
+  },
+  "GET /forecast": {
+    "required_fields": [
+      "forecast_month",
+      "forecast_date",
+      "category_projections",
+      "total_projected_spend",
+      "horizon_days",
+      "methodology"
+    ]
+  },
+  "GET /insights": {
+    "required_fields": [
+      "total_expenses_audited",
+      "total_spend_analyzed",
+      "total_potential_annual_savings",
+      "price_variance_findings",
+      "category_spike_findings",
+      "subscription_findings",
+      "actionable_tips",
+      "executive_report_markdown"
+    ]
+  },
+  "POST /ask": {
+    "required_fields": [
+      "question",
+      "answer",
+      "relevant_metrics",
+      "sources_cited"
+    ]
+  },
+  "GET /review-queue": {
+    "is_array": true,
+    "required_fields": [
+      "id",
+      "vendor",
+      "amount",
+      "category",
+      "needs_review",
+      "review_reason"
+    ]
+  },
+  "GET /sample-receipts": {
+    "is_array": true,
+    "required_fields": [
+      "filename",
+      "title",
+      "expected_category",
+      "expected_amount",
+      "image_url"
+    ]
+  },
+  "GET /ask/suggestions": {
+    "required_fields": [
+      "suggestions"
+    ]
+  },
+  "GET /explain-prediction": {
+    "required_fields": [
+      "predicted_category",
+      "confidence",
+      "base_value",
+      "top_features",
+      "summary_explanation"
+    ]
+  }
+}
+

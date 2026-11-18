@@ -1,0 +1,21 @@
+{
+  "name": "Swadeshi Khata | स्वदेशी खाता",
+  "short_name": "Swadeshi Khata",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "description": "Aapka hisaab, aapka bharosa - AI Expense Auditor & Intelligence Sentinel for Indian Small Businesses",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect width='192' height='192' rx='38' fill='%23000000'/><circle cx='96' cy='96' r='72' stroke='%23FF9933' stroke-width='8' fill='none'/><circle cx='96' cy='96' r='20' fill='%23D4A017'/></svg>",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' rx='100' fill='%23000000'/><circle cx='256' cy='256' r='192' stroke='%23FF9933' stroke-width='20' fill='none'/><circle cx='256' cy='256' r='52' fill='%23D4A017'/></svg>",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}

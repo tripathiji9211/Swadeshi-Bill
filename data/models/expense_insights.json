@@ -1,0 +1,282 @@
+{
+  "analysis_date": "2026-11-04",
+  "total_expenses_audited": 5000,
+  "total_spend_analyzed": 35016443.33,
+  "total_potential_annual_savings": 1433026.08,
+  "price_variance_findings": [
+    {
+      "item_description": "Diwali celebration mithai dabba for team",
+      "category": "groceries",
+      "cheapest_vendor": "Aggarwal Sweets & Namkeen",
+      "cheapest_price": 4867.9,
+      "expensive_vendor": "Chai Point & Snacks",
+      "expensive_price": 12320.37,
+      "price_spread_pct": 153.1,
+      "orders_count": 110,
+      "potential_savings_per_order": 7452.46,
+      "estimated_annual_savings": 409885.51,
+      "recommendation": "Consolidate orders with 'Aggarwal Sweets & Namkeen' at Rs.4,867.90 instead of 'Chai Point & Snacks' at Rs.12,320.37 (saves Rs.7,452.46 per order; +153.1% markup)."
+    },
+    {
+      "item_description": "Corrugated packing boxes 3-ply 100 pcs bundle",
+      "category": "supplies",
+      "cheapest_vendor": "National Packaging Mart",
+      "cheapest_price": 3132.1,
+      "expensive_vendor": "Balaji Polybags & Packing Rolls",
+      "expensive_price": 7401.17,
+      "price_spread_pct": 136.3,
+      "orders_count": 99,
+      "potential_savings_per_order": 4269.07,
+      "estimated_annual_savings": 211318.73,
+      "recommendation": "Consolidate orders with 'National Packaging Mart' at Rs.3,132.10 instead of 'Balaji Polybags & Packing Rolls' at Rs.7,401.17 (saves Rs.4,269.07 per order; +136.3% markup)."
+    },
+    {
+      "item_description": "Delivery van diesel refill 35 litres (IOCL)",
+      "category": "transport",
+      "cheapest_vendor": "Uber India Systems Pvt Ltd",
+      "cheapest_price": 3316.65,
+      "expensive_vendor": "Hindustan Petroleum (HPCL)",
+      "expensive_price": 6448.93,
+      "price_spread_pct": 94.4,
+      "orders_count": 118,
+      "potential_savings_per_order": 3132.28,
+      "estimated_annual_savings": 184804.78,
+      "recommendation": "Consolidate orders with 'Uber India Systems Pvt Ltd' at Rs.3,316.65 instead of 'Hindustan Petroleum (HPCL)' at Rs.6,448.93 (saves Rs.3,132.28 per order; +94.4% markup)."
+    },
+    {
+      "item_description": "IndiaMART SME verified supplier listing renewal",
+      "category": "marketing",
+      "cheapest_vendor": "Google India Ads (PPC)",
+      "cheapest_price": 13617.52,
+      "expensive_vendor": "Star Digital WhatsApp Bulk SMS",
+      "expensive_price": 22620.3,
+      "price_spread_pct": 66.1,
+      "orders_count": 35,
+      "potential_savings_per_order": 9002.78,
+      "estimated_annual_savings": 157548.61,
+      "recommendation": "Consolidate orders with 'Google India Ads (PPC)' at Rs.13,617.52 instead of 'Star Digital WhatsApp Bulk SMS' at Rs.22,620.30 (saves Rs.9,002.78 per order; +66.1% markup)."
+    },
+    {
+      "item_description": "Google Search Ads click campaign for local customers",
+      "category": "marketing",
+      "cheapest_vendor": "Canva Pro Annual India",
+      "cheapest_price": 6393.98,
+      "expensive_vendor": "Google India Ads (PPC)",
+      "expensive_price": 12036.33,
+      "price_spread_pct": 88.2,
+      "orders_count": 48,
+      "potential_savings_per_order": 5642.35,
+      "estimated_annual_savings": 135416.36,
+      "recommendation": "Consolidate orders with 'Canva Pro Annual India' at Rs.6,393.98 instead of 'Google India Ads (PPC)' at Rs.12,036.33 (saves Rs.5,642.35 per order; +88.2% markup)."
+    },
+    {
+      "item_description": "VRL freight parcel charges outstation delivery",
+      "category": "transport",
+      "cheapest_vendor": "Porter Local Tempo Services",
+      "cheapest_price": 1446.89,
+      "expensive_vendor": "TCI Freight Cargo",
+      "expensive_price": 3244.67,
+      "price_spread_pct": 124.3,
+      "orders_count": 128,
+      "potential_savings_per_order": 1797.78,
+      "estimated_annual_savings": 115057.86,
+      "recommendation": "Consolidate orders with 'Porter Local Tempo Services' at Rs.1,446.89 instead of 'TCI Freight Cargo' at Rs.3,244.67 (saves Rs.1,797.78 per order; +124.3% markup)."
+    },
+    {
+      "item_description": "A4 JK Copier paper 5 reams box + pens",
+      "category": "supplies",
+      "cheapest_vendor": "Gupta Ji Stationery & Xerox",
+      "cheapest_price": 1754.91,
+      "expensive_vendor": "Printo Retail Printing Ltd",
+      "expensive_price": 3786.82,
+      "price_spread_pct": 115.8,
+      "orders_count": 109,
+      "potential_savings_per_order": 2031.91,
+      "estimated_annual_savings": 110739.11,
+      "recommendation": "Consolidate orders with 'Gupta Ji Stationery & Xerox' at Rs.1,754.91 instead of 'Printo Retail Printing Ltd' at Rs.3,786.82 (saves Rs.2,031.91 per order; +115.8% markup)."
+    },
+    {
+      "item_description": "Monthly pantry ration: biscuits, namkeen, rusk packets",
+      "category": "groceries",
+      "cheapest_vendor": "Chai Point & Snacks",
+      "cheapest_price": 1984.81,
+      "expensive_vendor": "Gupta Ji Dairy & Bakery",
+      "expensive_price": 3729.26,
+      "price_spread_pct": 87.9,
+      "orders_count": 99,
+      "potential_savings_per_order": 1744.45,
+      "estimated_annual_savings": 86350.29,
+      "recommendation": "Consolidate orders with 'Chai Point & Snacks' at Rs.1,984.81 instead of 'Gupta Ji Dairy & Bakery' at Rs.3,729.26 (saves Rs.1,744.45 per order; +87.9% markup)."
+    }
+  ],
+  "category_spike_findings": [
+    {
+      "category": "rent",
+      "month": "December 2025",
+      "actual_spend": 721907.45,
+      "rolling_3m_average": 426431.58,
+      "spike_percentage": 69.3,
+      "excess_spend": 295475.87,
+      "severity": "HIGH",
+      "likely_driver": "Annual lease escalation or multi-facility expansion"
+    },
+    {
+      "category": "rent",
+      "month": "August 2025",
+      "actual_spend": 892035.68,
+      "rolling_3m_average": 638350.18,
+      "spike_percentage": 39.7,
+      "excess_spend": 253685.5,
+      "severity": "MEDIUM",
+      "likely_driver": "Annual lease escalation or multi-facility expansion"
+    },
+    {
+      "category": "utilities",
+      "month": "November 2025",
+      "actual_spend": 255144.89,
+      "rolling_3m_average": 81442.32,
+      "spike_percentage": 213.3,
+      "excess_spend": 173702.57,
+      "severity": "HIGH",
+      "likely_driver": "Unplanned operational spike"
+    },
+    {
+      "category": "salaries",
+      "month": "August 2025",
+      "actual_spend": 341987.62,
+      "rolling_3m_average": 168988.54,
+      "spike_percentage": 102.4,
+      "excess_spend": 172999.08,
+      "severity": "HIGH",
+      "likely_driver": "Unplanned operational spike"
+    },
+    {
+      "category": "supplies",
+      "month": "October 2025",
+      "actual_spend": 215356.47,
+      "rolling_3m_average": 67163.99,
+      "spike_percentage": 220.6,
+      "excess_spend": 148192.48,
+      "severity": "HIGH",
+      "likely_driver": "Festive packing materials & bulk boxes surge"
+    },
+    {
+      "category": "marketing",
+      "month": "November 2025",
+      "actual_spend": 172095.71,
+      "rolling_3m_average": 64066.5,
+      "spike_percentage": 168.6,
+      "excess_spend": 108029.21,
+      "severity": "HIGH",
+      "likely_driver": "Diwali festival ad campaigns & local inserts"
+    },
+    {
+      "category": "salaries",
+      "month": "October 2025",
+      "actual_spend": 349550.77,
+      "rolling_3m_average": 255805.77,
+      "spike_percentage": 36.6,
+      "excess_spend": 93745.0,
+      "severity": "MEDIUM",
+      "likely_driver": "Unplanned operational spike"
+    },
+    {
+      "category": "groceries",
+      "month": "September 2025",
+      "actual_spend": 216910.22,
+      "rolling_3m_average": 142997.73,
+      "spike_percentage": 51.7,
+      "excess_spend": 73912.49,
+      "severity": "MEDIUM",
+      "likely_driver": "Unplanned operational spike"
+    }
+  ],
+  "subscription_findings": [
+    {
+      "service_name": "Municipal trade license fee & challan",
+      "vendor": "Diwali Gift Hampers & Dryfruits",
+      "category": "misc",
+      "billing_cadence": "Quarterly",
+      "avg_billing_amount": 4770.7,
+      "annual_spend": 26238.83,
+      "transaction_count": 11,
+      "optimization_action": "Schedule automated calendar reminders for annual trade license renewals to avoid late fee penalties."
+    },
+    {
+      "service_name": "mktg ad campaign recharge online",
+      "vendor": "IndiaMART InterMESH B2B",
+      "category": "marketing",
+      "billing_cadence": "Quarterly",
+      "avg_billing_amount": 5818.77,
+      "annual_spend": 23275.1,
+      "transaction_count": 8,
+      "optimization_action": "Review marketing ROI and convert monthly SMS/ad recharges to quarterly volume tier."
+    },
+    {
+      "service_name": "mktg ad campaign recharge online",
+      "vendor": "Google India Ads (PPC)",
+      "category": "marketing",
+      "billing_cadence": "Annual / Ad-hoc",
+      "avg_billing_amount": 5836.12,
+      "annual_spend": 17508.36,
+      "transaction_count": 6,
+      "optimization_action": "Review marketing ROI and convert monthly SMS/ad recharges to quarterly volume tier."
+    },
+    {
+      "service_name": "mktg ad campaign recharge online",
+      "vendor": "Prabhat Daily Newspaper (Pamphlet insert)",
+      "category": "marketing",
+      "billing_cadence": "Quarterly",
+      "avg_billing_amount": 6933.17,
+      "annual_spend": 17332.92,
+      "transaction_count": 5,
+      "optimization_action": "Review marketing ROI and convert monthly SMS/ad recharges to quarterly volume tier."
+    },
+    {
+      "service_name": "Municipal trade license fee & challan",
+      "vendor": "Municipal Trade License Renewal",
+      "category": "misc",
+      "billing_cadence": "Quarterly",
+      "avg_billing_amount": 4884.07,
+      "annual_spend": 17094.25,
+      "transaction_count": 7,
+      "optimization_action": "Schedule automated calendar reminders for annual trade license renewals to avoid late fee penalties."
+    },
+    {
+      "service_name": "mktg ad campaign recharge online",
+      "vendor": "Canva Pro Annual India",
+      "category": "marketing",
+      "billing_cadence": "Quarterly",
+      "avg_billing_amount": 5336.6,
+      "annual_spend": 16009.79,
+      "transaction_count": 6,
+      "optimization_action": "Review marketing ROI and convert monthly SMS/ad recharges to quarterly volume tier."
+    },
+    {
+      "service_name": "monthly internet bill broadband inv#902",
+      "vendor": "Tata Power DDL",
+      "category": "utilities",
+      "billing_cadence": "Quarterly",
+      "avg_billing_amount": 2880.46,
+      "annual_spend": 14402.29,
+      "transaction_count": 10,
+      "optimization_action": "Consolidate multiple redundant data plans into a single business fiber package."
+    },
+    {
+      "service_name": "Office split AC servicing & gas recharge (summer)",
+      "vendor": "Quick Pest Control Services",
+      "category": "misc",
+      "billing_cadence": "Quarterly",
+      "avg_billing_amount": 3149.04,
+      "annual_spend": 14170.69,
+      "transaction_count": 9,
+      "optimization_action": "Audit seat utilization; negotiate 15-20% discount on annual upfront prepayment."
+    }
+  ],
+  "executive_plain_language_report": "# ReceiptRadar: Monthly Executive Expense & Savings Report\n\n### Executive Overview\nWe audited **5,000 business expense records** representing **Rs.35,016,443.33** in total outlay. Our audit identified **Rs.1,433,026.08** in potential annual cost savings across vendor price arbitrage, category budget spikes, and recurring subscription rationalization.\n\n---\n\n### Finding 1: Same Items Purchased at Different Prices\nOur audit found multiple instances where your team bought the exact same item from different stores at widely varying prices:\n* **Diwali celebration mithai dabba for team**: You bought this item from **Aggarwal Sweets & Namkeen** at **Rs.4,867.90**, but also paid **Rs.12,320.37** at **Chai Point & Snacks** (+153.1% markup).\n* **Impact**: Standardizing this single item to your preferred vendor can recover an estimated **Rs.409,885.51 per year**.\n\n---\n\n### Finding 2: Categories Surging >25% Above Rolling Average\nCertain operational budgets experienced severe short-term spending inflation compared to their preceding 3-month baseline:\n* **RENT (December 2025)**: Recorded spend of **Rs.721,907.45**, which is **+69.3% higher** than your 3-month rolling baseline of **Rs.426,431.58**.\n* **Driver**: Annual lease escalation or multi-facility expansion. Excess outlay: **Rs.295,475.87**.\n\n---\n\n### Finding 3: Recurring Subscriptions & Monthly Services to Review\nRecurring services represent a steady cash drain that often escapes review:\n* **Municipal trade license fee & challan (Diwali Gift Hampers & Dryfruits)**: Billed at an average of **Rs.4,770.70**, totaling an annual commitment of **Rs.26,238.83**.\n* **Action**: Schedule automated calendar reminders for annual trade license renewals to avoid late fee penalties..\n\n---\n\n### 3 Actionable Tips for This Month\n\n1. **Tip 1 (Vendor Consolidation)**: Require your purchasing team to buy all paper, stationery, and packing materials exclusively from **Aggarwal Sweets & Namkeen** to stop paying up to a 153.1% markup at retail stores.\n2. **Tip 2 (Budget Guardrail)**: Implement a manager sign-off requirement whenever **rent** expenditures exceed your 3-month average (Rs.426,432) by more than 25%.\n3. **Tip 3 (Subscription Pruning)**: Conduct a 30-day seat audit on **Municipal trade license fee & challan** and ask the provider for an annual contract discount of 15%–20%.\n",
+  "actionable_tips": [
+    "Tip 1 (Vendor Consolidation): Shift all procurement of 'Diwali celebration mithai dabba for team' to 'Aggarwal Sweets & Namkeen' (Rs.4,867.90) to eliminate 153.1% markups.",
+    "Tip 2 (Budget Guardrail): Introduce department pre-approvals on 'RENT' whenever monthly run-rate approaches Rs.426,432 (+25% above baseline).",
+    "Tip 3 (Subscription Pruning): Audit your 'Municipal trade license fee & challan' account at 'Diwali Gift Hampers & Dryfruits' and negotiate a 15-20% annual prepayment discount."
+  ]
+}

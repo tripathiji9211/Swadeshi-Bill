@@ -1,0 +1,132 @@
+{
+  "total_cases_analyzed": 10,
+  "cases": [
+    {
+      "id": "ERR-CLF-01",
+      "type": "Misclassification",
+      "component": "CategoryClassifier (TF-IDF + Logistic Regression)",
+      "input_sample": "Sharma Kirana Store: Aashirvaad Atta 10kg packet mustard oil",
+      "expected": "Category: 'groceries'",
+      "actual_output": "Category: 'salaries' (Conf: 40.8%)",
+      "actual_class_probability": "10.6%",
+      "error_severity": "CRITICAL (High Confidence False Positive)",
+      "title": "Vendor Entity Name Collision with Salary Payroll Tokens",
+      "likely_cause": "Lexical saliency bias: 'Sharma' in the vendor name heavily matches employee payroll surnames ('Sharma ji salary', 'Rohit Sharma salary') in the unigram TF-IDF vocabulary. Because the product brand ('Aashirvaad Atta') was not present in the training set, the vendor token 'Sharma' dominated posterior probabilities towards 'salaries'.",
+      "suggested_fix": "1. Separate Vendor and Item Description into distinct TF-IDF feature channels with independent weighting (e.g., 0.3 vendor + 0.7 description).\n2. Strip common Indian surnames ('Sharma', 'Gupta', 'Singh', 'Verma') from merchant names prior to feature extraction.\n3. Switch to subword character n-grams (3-5 chars) or dense sentence embeddings (MiniLM-L6-v2) to capture semantic food concepts."
+    },
+    {
+      "id": "ERR-CLF-02",
+      "type": "Misclassification",
+      "component": "CategoryClassifier (TF-IDF + Logistic Regression)",
+      "input_sample": "Barista Coffee: Client acquisition presentation coffee & lunch meeting",
+      "expected": "Category: 'marketing'",
+      "actual_output": "Category: 'groceries' (Conf: 58.4%)",
+      "actual_class_probability": "5.1%",
+      "error_severity": "HIGH (Business Misallocation)",
+      "title": "Contextual Ambiguity across Business Intent (Hospitality vs Direct Food)",
+      "likely_cause": "Lexical keyword overlap: Tokens 'coffee', 'lunch', and 'Barista' have massive positive associations with 'groceries' in small-business accounts. The classifier lacks semantic attention to detect the business context modifier 'Client acquisition presentation', which defines the intent as sales/marketing.",
+      "suggested_fix": "1. Introduce bi-gram intent patterns: Give priority weighting to 'client acquisition', 'pitch meeting', and 'marketing lunch'.\n2. Implement a rule-based post-processor: If text matches `r'(client|lead|pitch|acquisition)'`, elevate 'marketing' category.\n3. Fine-tune a lightweight transformer (DistilBERT) with cross-entropy loss over contextual sequence spans."
+    },
+    {
+      "id": "ERR-CLF-03",
+      "type": "Misclassification",
+      "component": "CategoryClassifier (TF-IDF + Logistic Regression)",
+      "input_sample": "Dunzo Logistics: Urgent delivery of signed stamp paper legal agreements",
+      "expected": "Category: 'transport'",
+      "actual_output": "Category: 'groceries' (Conf: 39.0%)",
+      "actual_class_probability": "18.5%",
+      "error_severity": "MEDIUM (Cross-Department Friction)",
+      "title": "Document Content Confused with Delivery Logistics Service",
+      "likely_cause": "Noun phrase collision: The item description contains 'stamp paper legal agreements'. The model latches onto 'stamp paper' (frequent stationery token in 'supplies') and ignores the courier verb/vendor 'Dunzo Logistics'.",
+      "suggested_fix": "1. Entity Recognition (NER) for Logistics Vendors: If the merchant is recognized as an Indian courier/delivery fleet ('Dunzo', 'Porter', 'Delhivery', 'Shadowfax'), enforce 'transport' as the default category unless explicitly overridden.\n2. Use dependency parsing to identify 'Dunzo' as the primary service provider and 'agreements' as the transported object."
+    },
+    {
+      "id": "ERR-CLF-04",
+      "type": "Misclassification",
+      "component": "CategoryClassifier (TF-IDF + Logistic Regression)",
+      "input_sample": "Daily Labor Contractor: 4 godown workers tempo loading unloading bhada",
+      "expected": "Category: 'salaries'",
+      "actual_output": "Category: 'transport' (Conf: 74.6%)",
+      "actual_class_probability": "2.1%",
+      "error_severity": "HIGH (Tax & Payroll Misreporting)",
+      "title": "Hinglish Transport Slang Overpowering Labor Payout Intent",
+      "likely_cause": "Hinglish token sparsity: In Indian SMBs, 'bhada' (fare/freight) and 'tempo' are often used colloquially for manual loading wages. The model sees 'tempo bhada' and classifies as 'transport', missing the payroll intent of '4 godown workers payout'.",
+      "suggested_fix": "1. Domain Lexicon Augmentation: Add bilingual Hinglish labor terms ('mazdoor', 'palledar', 'daily labor', 'dihadi') to salaries dictionary.\n2. Rule: If text matches `r'(workers?|labor|dihadi|staff|overtime)'` and amount is a round payout, route to 'salaries'."
+    },
+    {
+      "id": "ERR-CLF-05",
+      "type": "Misclassification",
+      "component": "CategoryClassifier (TF-IDF + Logistic Regression)",
+      "input_sample": "Urban Company: Office split AC duct cleaning and compressor gas refill",
+      "expected": "Category: 'misc'",
+      "actual_output": "Category: 'misc' (Conf: 67.6%)",
+      "actual_class_probability": "67.6%",
+      "error_severity": "MEDIUM (Operational Drift)",
+      "title": "Hardware Appliance Overlap with Recurring Power Utilities",
+      "likely_cause": "Feature collision: The token 'AC' (Air Conditioner) and 'compressor' share vocabulary with commercial electricity and utility cooling bills in the utilities class. The repair service aspect ('Urban Company') was under-represented.",
+      "suggested_fix": "1. Add Facilities Maintenance dictionary mapping: Map 'AC service', 'compressor refill', 'plumbing', and 'duct cleaning' to 'misc'.\n2. Train with negative n-grams: Dissociate physical maintenance contractors from recurring utility board payments."
+    },
+    {
+      "id": "ERR-CLF-06",
+      "type": "Misclassification",
+      "component": "CategoryClassifier (TF-IDF + Logistic Regression)",
+      "input_sample": "Amazon Business: Commercial metal dustbins, floor mop, and conference door mats",
+      "expected": "Category: 'misc'",
+      "actual_output": "Category: 'utilities' (Conf: 20.4%)",
+      "actual_class_probability": "18.0%",
+      "error_severity": "MEDIUM (Priors Overfitting)",
+      "title": "Platform Vendor Prior Dominating Disparate Product Categories",
+      "likely_cause": "E-Commerce Platform Prior Bias: 'Amazon Business' represents over 60% of 'supplies' transactions in historical training. When non-stationery physical items (dustbins, door mats) are bought on Amazon, the strong vendor prior biases the prediction.",
+      "suggested_fix": "1. Downweight neutral e-commerce platforms ('Amazon', 'Flipkart', 'IndiaMART') during vendor tokenization.\n2. Enforce classification strictly on item descriptions when vendor is an e-commerce marketplace."
+    },
+    {
+      "id": "ERR-CLF-07",
+      "type": "Misclassification",
+      "component": "CategoryClassifier (TF-IDF + Logistic Regression)",
+      "input_sample": "GoDaddy India: Annual corporate domain name renewal and DNS records",
+      "expected": "Category: 'misc'",
+      "actual_output": "Category: 'misc' (Conf: 21.3%)",
+      "actual_class_probability": "21.3%",
+      "error_severity": "LOW (Category Ambiguity)",
+      "title": "Digital Hosting Infrastructure vs Advertising Collateral",
+      "likely_cause": "Digital marketing taxonomy overlap: Tokens 'domain', 'website', and 'online' are shared heavily between digital ads (Google/Facebook Ads in 'marketing') and domain registrar invoices ('misc' / IT utilities).",
+      "suggested_fix": "1. Dedicated Registrar Rule: Whitelist GoDaddy, Namecheap, Hostinger, AWS, and Cloudflare as IT / Software Infrastructure ('misc' or dedicated IT category).\n2. Separate ad platform tokens ('cpc', 'impressions', 'campaign') from infrastructure tokens ('dns', 'domain', 'ssl')."
+    },
+    {
+      "id": "ERR-PSR-08",
+      "type": "Mis-parsing",
+      "component": "LLMReceiptParser (Regex / Heuristic Fallback)",
+      "input_sample": "TAX INVOICE / CASH MEMO | GSTIN: 07AAAAA0000A1Z5",
+      "expected": "Vendor: 'BOMBAY HARDWARE & SANITARY STORE' | Total: Rs.2,400.00 | Date: '2024-03-12'",
+      "actual_output": "Vendor: 'TAX INVOICE / CASH MEMO' | Total: Rs.2,400.00 | Date: '2024-03-12'",
+      "error_severity": "CRITICAL (Merchant Ledger Pollution)",
+      "title": "Document Title Misidentified as Commercial Merchant Entity",
+      "likely_cause": "Top-line heuristic extraction: OCR text starts with 'TAX INVOICE / CASH MEMO'. Standard fallback regex picks the first prominent line as the vendor name, erroneously capturing the invoice legal title instead of 'BOMBAY HARDWARE STORE'.",
+      "suggested_fix": "1. Header Blacklist: Filter out common statutory headers ('TAX INVOICE', 'CASH MEMO', 'BILL OF SUPPLY', 'RETAIL INVOICE', 'ESTIMATE').\n2. Search for Merchant Line: Select the first non-blacklisted title-case string of 4+ characters with highest font height/confidence."
+    },
+    {
+      "id": "ERR-PSR-09",
+      "type": "Mis-parsing",
+      "component": "LLMReceiptParser (Regex / Heuristic Fallback)",
+      "input_sample": "BHARAT PETROLEUM PUMP | DATE: 04/05/2024",
+      "expected": "Vendor: 'BHARAT PETROLEUM PUMP' | Total: Rs.3,746.40 | Date: '2024-05-04'",
+      "actual_output": "Vendor: 'BHARAT PETROLEUM PUMP' | Total: Rs.3,746.40 | Date: '2024-05-04'",
+      "error_severity": "HIGH (Financial Reporting Period Distortion)",
+      "title": "Ambiguous Day/Month Ordering in Dual-Digit Indian Dates",
+      "likely_cause": "Locale Date Conflict: '04/05/2024' represents May 4th in Indian standard (DD/MM/YYYY), but US default parsers (datetime.strptime %m/%d/%Y) parse it as April 5th. This shifts the expense record by an entire calendar month.",
+      "suggested_fix": "1. Enforce `dayfirst=True` in dateutil / regex parsers for Indian locale deployments.\n2. Validate date against current calendar month or receipt timestamp to flag out-of-order temporal anomalies."
+    },
+    {
+      "id": "ERR-PSR-10",
+      "type": "Mis-parsing",
+      "component": "LLMReceiptParser (Regex / Heuristic Fallback)",
+      "input_sample": "GUPTA JI STATIONERY & BOOKS | DATE: 2024-10-18",
+      "expected": "Vendor: 'GUPTA JI STATIONERY & BOOKS' | Total: Rs.767.00 | Date: 'N/A'",
+      "actual_output": "Vendor: 'GUPTA JI STATIONERY & BOOKS' | Total: Rs.650.00 | Date: '2024-10-18'",
+      "error_severity": "MEDIUM (Itemization Loss)",
+      "title": "Glued Quantity Multiplier Pattern Causing Item Line Collapse",
+      "likely_cause": "OCR token concatenation: Low-resolution receipts frequently print quantity without whitespace (e.g. '10xBall Pens Pack'). Regex expecting whitespace after multiplier `(\\d+)x\\s+(.*)` fails to isolate item description from unit count.",
+      "suggested_fix": "1. Update Item Regex: Use `r'^(?:(\\d+)\\s*[xX*]\\s*)?(.*?)\\s+([\\d,]+\\.\\d{2})$'` to tolerate zero whitespace between multiplier and name.\n2. Preprocessing token normalization: Insert whitespace between digits and letters during text cleanup."
+    }
+  ]
+}

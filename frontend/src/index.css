@@ -1,0 +1,120 @@
+@import './styles/tokens.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    border-color: #1C1C1F;
+  }
+
+  html,
+  body {
+    background-color: #000000 !important;
+    color: #EDEDED;
+    font-family: 'Inter', 'Geist', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+  }
+
+  ::selection {
+    background: rgba(45, 212, 212, 0.25);
+    color: #EDEDED;
+  }
+
+  /* Command Dashboard Headings */
+  h1, h2, h3, h4, h5, h6 {
+    color: #EDEDED;
+    font-weight: 400;
+    letter-spacing: -0.03em;
+  }
+
+  /* High-Tech Scrollbar */
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #000000;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1C1C1F;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #2A2A2E;
+  }
+}
+
+@layer utilities {
+  /* Tech Monospace Utility for headers and status tags */
+  .font-tech {
+    font-family: 'JetBrains Mono', 'Geist Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #52555C;
+  }
+
+  /* Standard 1px Bordered Panel */
+  .panel-surface {
+    background-color: #0A0A0A;
+    border: 1px solid #1C1C1F;
+    border-radius: 6px;
+  }
+
+  .panel-surface-hover {
+    transition: border-color 0.15s ease, background-color 0.15s ease;
+  }
+  .panel-surface-hover:hover {
+    background-color: #111111;
+    border-color: #2A2A2E;
+  }
+
+  /* Accent Line/Dot Glows */
+  .glow-cyan {
+    box-shadow: 0 0 8px rgba(45, 212, 212, 0.4);
+  }
+  .glow-periwinkle {
+    box-shadow: 0 0 8px rgba(139, 141, 255, 0.4);
+  }
+  .glow-ok {
+    box-shadow: 0 0 8px rgba(52, 211, 153, 0.4);
+  }
+  .glow-warn {
+    box-shadow: 0 0 8px rgba(245, 181, 68, 0.4);
+  }
+  .glow-danger {
+    box-shadow: 0 0 8px rgba(248, 113, 113, 0.4);
+  }
+
+  /* Grid Backgrounds */
+  .bg-grid-tech {
+    background-size: 32px 32px;
+    background-image: 
+      linear-gradient(to right, rgba(28, 28, 31, 0.6) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(28, 28, 31, 0.6) 1px, transparent 1px);
+  }
+
+  .bg-dots-tech {
+    background-size: 24px 24px;
+    background-image: radial-gradient(rgba(42, 42, 46, 0.8) 1px, transparent 1px);
+  }
+
+  /* Subtle crosshair + markers at corner intersections */
+  .crosshair-corner {
+    position: relative;
+  }
+  .crosshair-corner::before {
+    content: '+';
+    position: absolute;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    line-height: 1;
+    color: #52555C;
+    pointer-events: none;
+    z-index: 10;
+  }
+}
